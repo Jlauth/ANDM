@@ -32,8 +32,20 @@ import androidx.compose.ui.unit.dp
 import com.example.andm.ui.theme.ANDMTheme
 
 class MainActivity : ComponentActivity() {
+//    private lateinit var database: TaskDatabase
+//    private lateinit var repository: TaskRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        database = TaskDatabase.getDatabase(this)
+//        repository = TaskRepository(database.taskDao())
+//
+//        lifecycleScope.launch {
+//            val task = repository.getAllTasks()
+//            Log.d("DatabaseCheck", "Nb de tasks: ${task.size}")
+//        }
+
         enableEdgeToEdge()
         setContent {
             ANDMTheme {
@@ -53,6 +65,7 @@ fun TaskScreen() {
     val showCompleted = remember { mutableStateOf(false) }
     val newTaskTitle = remember { mutableStateOf("") }
     val newTaskDescription = remember { mutableStateOf("") }
+    // var newTaskDescription2 by remember { mutableStateOf("") } // convention ok
 
     Column(modifier = Modifier.padding(30.dp)) {
         Text(

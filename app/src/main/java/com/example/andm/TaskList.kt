@@ -9,7 +9,7 @@ class TaskList {
     val tasks: SnapshotStateList<Task> get() = _tasks
 
     fun addTask(title: String, description: String) {
-        _tasks.add(Task(title, description))
+        _tasks.add(Task(title = title, description = description))
     }
 
     fun completeTask(index: Int) {
